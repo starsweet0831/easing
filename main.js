@@ -53,7 +53,7 @@ $(window).scroll(function () {
     // console.log(arrowTop);
     // console.log(arrowTime);
 
-    if (windowTop >= arrowTop) arrow.fadeIn(arrowTimeInt);
-    else arrow.fadeOut(arrowTimeInt)
+    if (windowTop >= arrowTop) arrow.stop().fadeIn(arrowTimeInt);
+    else arrow.stop().fadeOut(arrowTimeInt)
 });
 
