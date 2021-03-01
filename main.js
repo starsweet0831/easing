@@ -3,15 +3,15 @@
 // 取得每個a元素資料
 $("a").each(function (index, element) {
     
-    console.log("編號:" + index);
+    // console.log("編號:" + index);
 
     var target = $(this).attr("data-st-target");
     var duration = $(this).attr("data-st-duration");
     var offsetTop = $(this).attr("data-st-offset");
 
-    console.log("目標:" + target);
-    console.log("時間:" + duration);
-    console.log("位移:" + offsetTop);
+    // console.log("目標:" + target);
+    // console.log("時間:" + duration);
+    // console.log("位移:" + offsetTop);
 
     var offset = $("#" + target).offset();
     var top = offset.top;
@@ -44,16 +44,18 @@ arrow.fadeOut();
 // 箭頭隱藏效果
 $(window).scroll(function () { 
     var windowTop = $(this).scrollTop();
-    console.log("視窗的上方:" + windowTop);
+    // console.log("視窗的上方:" + windowTop);
 
     var arrowTop = arrow.attr("data-st-top");
     var arrowTime = arrow.attr("data-st-time");
     var arrowTimeInt = parseInt(arrowTime);
 
-    // console.log(arrowTop);
-    // console.log(arrowTime);
+    // console.log("箭頭要出現的位置：" +  arrowTop);
+    // console.log("箭頭特效的時間　：" + arrowTime);
 
+    // 如果 視窗位置 大於等於 箭頭上方 就 淡入
     if (windowTop >= arrowTop) arrow.stop().fadeIn(arrowTimeInt);
+    // 否則 就 淡出
     else arrow.stop().fadeOut(arrowTimeInt)
 });
 
